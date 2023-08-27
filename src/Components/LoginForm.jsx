@@ -38,7 +38,7 @@ export const LoginForm = () => {
                 className='login-form_logo'
             />
             <form className='login-form__form' onSubmit={(e) => { handleForm(e) }}>
-                <TextField
+                {/* <TextField
                     required
                     id="user"
                     label="User"
@@ -53,7 +53,15 @@ export const LoginForm = () => {
                     className='login-form__input'
                     type='password'
                     name='password'
-                />
+                /> */}
+                <TextField
+                    required
+                    id="password"
+                    label="Password"
+                    className='login-form__input'
+                    type='password'
+                    name='password'
+                /> 
                 <Button type='submit' variant="contained">Sign In</Button>
             </form>
         </div>

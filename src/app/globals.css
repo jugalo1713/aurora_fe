@@ -78,3 +78,29 @@ body {
 
 .u-margin-bottom-high {
   margin-bottom: 3rem; }
+
+.navbar__main-links {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-right: 2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .navbar__main-links {
+      color: #000; } }
+
+.navbar__logo {
+  width: auto;
+  max-height: 3rem;
+  margin-right: 1rem; }
+  @media only screen and (max-width: 37.5em) {
+    .navbar__logo {
+      display: none; } }
+
+.navbar__logo-mobile {
+  width: auto;
+  max-height: 2.5rem;
+  margin-right: 0.5rem; }
+  @media (min-width: 600px) {
+    .navbar__logo-mobile {
+      display: none; } }

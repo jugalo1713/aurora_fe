@@ -1,0 +1,41 @@
+@import "../abstracts/variables.scss";
+
+.navbar{
+    &__main-links{
+        color: $color-white;
+        display: block;
+        text-decoration: none;
+        font-size: 1.1rem;
+        margin-right: 2rem;
+
+        @include respond(phone) {
+            color: $color-black;
+        }
+
+    }
+
+    &__logo{
+        width: auto;
+        max-height: 3rem;
+        margin-right: 1rem;
+
+        @include respond(phone) {
+            display: none;
+        }
+    }
+
+    &__logo-mobile{
+        width: auto;
+        max-height: 2.5rem;
+        margin-right: 0.5rem;
+
+        // @include respond(tab-land) {
+        //     display: none;
+        // }
+
+        @media (min-width: 600px)
+        {
+            display: none;
+        }
+    }
+}
