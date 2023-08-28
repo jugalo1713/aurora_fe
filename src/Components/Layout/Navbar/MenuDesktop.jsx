@@ -35,7 +35,7 @@ const MenuDesktop = ({pages = {}}) => {
             textDecoration: 'none',
           }}
         >
-          Aurora Desktop
+          Aurora
         </Typography>
 
         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

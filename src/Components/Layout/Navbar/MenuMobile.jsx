@@ -25,7 +25,7 @@ const MenuMobile = ({pages = {}}) => {
             textDecoration: 'none',
           }}
         >
-          Aurora Mobile
+          Aurora
         </Typography>
         <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
           {pages.map((page) => (
