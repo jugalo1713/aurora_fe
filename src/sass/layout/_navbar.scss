@@ -8,7 +8,7 @@
         font-size: 1.1rem;
         margin-right: 2rem;
 
-        @include respond(phone) {
+        @include respond(tablet) {
             color: $color-white;
         }
 
