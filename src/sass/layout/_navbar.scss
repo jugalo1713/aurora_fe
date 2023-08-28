@@ -2,14 +2,14 @@
 
 .navbar{
     &__main-links{
-        color: $color-white;
+        color: $color-black;
         display: block;
         text-decoration: none;
         font-size: 1.1rem;
         margin-right: 2rem;
 
         @include respond(phone) {
-            color: $color-black;
+            color: $color-white;
         }
 
     }
@@ -18,9 +18,10 @@
         width: auto;
         max-height: 3rem;
         margin-right: 1rem;
+        display: none;
 
-        @include respond(phone) {
-            display: none;
+        @include respond(tablet) {
+            display: flex;
         }
     }
 
@@ -28,13 +29,9 @@
         width: auto;
         max-height: 2.5rem;
         margin-right: 0.5rem;
+        display: flex;
 
-        // @include respond(tab-land) {
-        //     display: none;
-        // }
-
-        @media (min-width: 600px)
-        {
+        @include respond(tablet) {
             display: none;
         }
     }
