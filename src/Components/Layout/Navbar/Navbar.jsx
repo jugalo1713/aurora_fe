@@ -13,65 +13,79 @@ import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import MenuDesktop from './MenuDesktop';
 import MenuMobile from './MenuMobile';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 const pages = [
-    {pageName:'Importaciones',url:'/importaciones'}, 
-    {pageName:'Exportaciones',url:'/exportaciones'}, 
-    {pageName:'Terrestres',url:'/terrestres'}, 
-    {pageName:'Maestros',url:'/maestros'}];
+  { pageName: 'Importaciones', url: '/importaciones' },
+  { pageName: 'Exportaciones', url: '/exportaciones' },
+  { pageName: 'Terrestres', url: '/terrestres' },
+  { pageName: 'Maestros', url: '/maestros' },];
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const Navbar = () => {
-    const [anchorElUser, setAnchorElUser] = useState(null);
-  
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  const { data: session, status } = useSession();
+  console.log(session)
+  console.log(status)
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
 
   return (
     <AppBar position="static">
-    <Container maxWidth="xl">
-      <Toolbar disableGutters>
-      <MenuDesktop pages={pages}/>
-      <MenuMobile pages={pages} />
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <MenuDesktop pages={pages} />
+          <MenuMobile pages={pages} />
 
-        <Box sx={{ flexGrow: 0 }}>
-          <Tooltip title="Open settings">
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-            </IconButton>
-          </Tooltip>
-          <Menu
-            sx={{ mt: '45px' }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'right',
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-          >
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">{setting}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
-      </Toolbar>
-    </Container>
-  </AppBar>
+          <Box sx={{ flexGrow: 0 }}>
+
+            {
+              status && status == 'authenticated' ?
+                <>
+                  <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <Avatar alt="Remy Sharp" src="" />
+                    </IconButton>
+                    <Menu
+                      sx={{ mt: '45px' }}
+                      id="menu-appbar"
+                      anchorEl={anchorElUser}
+                      anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                      }}
+                      keepMounted
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'right',
+                      }}
+                      open={Boolean(anchorElUser)}
+                      onClose={handleCloseUserMenu}
+                    >
+                      {settings.map((setting) => (
+                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                          <Typography textAlign="center">{setting}</Typography>
+                        </MenuItem>
+                      ))}
+                    </Menu>
+                  </Tooltip>
+                </>
+                :
+                <MenuItem onClick={() => signIn('azure-ad-b2c')}>
+                  <Typography textAlign="center">Login</Typography>
+                </MenuItem>
+            }
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   )
 }
 
