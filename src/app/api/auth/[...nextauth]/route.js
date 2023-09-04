@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import AzureADProvider from "next-auth/providers/azure-ad";
 import AzureADB2CProvider from "next-auth/providers/azure-ad-b2c";
 
 const handler = NextAuth({
