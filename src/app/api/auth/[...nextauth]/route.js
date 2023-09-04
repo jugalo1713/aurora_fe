@@ -6,10 +6,16 @@ const handler = NextAuth({
     providers: [
 
         AzureADB2CProvider({
-            tenantId: process.env.AZURE_AD_B2C_TENANT_NAME,
-            clientId: process.env.AZURE_AD_B2C_CLIENT_ID,
-            clientSecret: process.env.AZURE_AD_B2C_CLIENT_SECRET,
-            primaryUserFlow: process.env.AZURE_AD_B2C_PRIMARY_USER_FLOW,
+            // tenantId: process.env.AZURE_AD_B2C_TENANT_NAME,
+            // clientId: process.env.AZURE_AD_B2C_CLIENT_ID,
+            // clientSecret: process.env.AZURE_AD_B2C_CLIENT_SECRET,
+            // primaryUserFlow: process.env.AZURE_AD_B2C_PRIMARY_USER_FLOW,
+            // authorization: { params: { scope: "offline_access openid" } },
+
+            tenantId: 'beskaradb2c',
+            clientId: 'fb213e79-445e-4daf-b0b9-2ce2e2609e9f',
+            clientSecret: 'y2R8Q~2vIMARyQN55CuRWDYc2d6nwUlkGuuuqa.9',
+            primaryUserFlow: 'B2C_1_SignUp_SignIn',
             authorization: { params: { scope: "offline_access openid" } },
         }),
     ],
