@@ -2,6 +2,7 @@
 
 import { ThemeProvider, createTheme } from '@mui/material'
 import Navbar from './Navbar/Navbar'
+import AuthWrapper from '../Auth/AuthWrapper';
 
 const theme = createTheme({
   palette: {
@@ -20,14 +21,15 @@ const theme = createTheme({
   }
 });
 
-const Theme= ({children}) => {
+const Theme = ({ children }) => {
 
   return (
     <>
-        <ThemeProvider theme={theme}>
-          <Navbar />
+      <ThemeProvider theme={theme}>
+        <AuthWrapper>
           {children}
-        </ThemeProvider>
+        </AuthWrapper>
+      </ThemeProvider>
     </>
   )
 }
