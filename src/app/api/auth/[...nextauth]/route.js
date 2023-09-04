@@ -19,6 +19,7 @@ const handler = NextAuth({
             authorization: { params: { scope: "offline_access openid" } },
         }),
     ],
+    secret: process.env.NEXTAUTH_SECRET,
 
     callbacks: {
         async jwt({ token, account, profile }) {
