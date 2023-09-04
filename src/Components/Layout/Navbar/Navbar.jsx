@@ -41,7 +41,7 @@ const Navbar = () => {
         <Toolbar disableGutters>
           <MenuDesktop pages={pages} />
           <MenuMobile pages={pages} />
-
+          <Typography textAlign="center">{session.user.name}</Typography>
           <Box sx={{ flexGrow: 0 }}>
 
             {

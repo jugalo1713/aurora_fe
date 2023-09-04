@@ -19,7 +19,7 @@
         margin-right: 1rem;
         display: none;
 
-        @include respond(dsesktop) {
+        @include respond(desktop) {
             display: flex;
         }
     }
