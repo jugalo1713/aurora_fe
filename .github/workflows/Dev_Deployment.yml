@@ -22,7 +22,6 @@ jobs:
         with:
           node-version: 18.17.0
       - run: npm install
-      - run: npm run compile:sass
 
       - name: Build And Deploy
         id: builddeploy
