@@ -1,5 +1,4 @@
 import React from "react";
-
 import Image from "next/image";
 import NavItem from "./NavItem";
 import { Menubar } from "@/components/ui/menubar";
@@ -31,6 +30,7 @@ const NavigationBar = () => {
             />
           </Link>
         </div>
+
         <div className="my-auto md:m-auto order-1 md:order-none">
           {menuItems && menuItems.length > 0 && (
             <Menubar className="hidden md:flex">
