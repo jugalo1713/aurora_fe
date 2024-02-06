@@ -32,7 +32,7 @@ export const menuItems = [
     mainUrl: "/maestros",
     subItems: [
       { itemTitle: "Ver maestros", url: "/maestros" },
-      { itemTitle: "Buscar", Shortcut: "⌘T", url: "/maestros" },
+      { itemTitle: "Crear", url: "/terceros/crear" },
     ],
   },
 ];
