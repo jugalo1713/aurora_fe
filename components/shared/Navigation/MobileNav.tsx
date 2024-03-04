@@ -53,7 +53,7 @@ const MobileNav = () => {
             src="/assets/icons/hamburger.svg"
             width={36}
             height={36}
-            className="invert"
+            className="invert dark:invert-0"
           />
         </SheetTrigger>
         <SheetContent>
