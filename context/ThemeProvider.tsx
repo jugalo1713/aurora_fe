@@ -1,6 +1,5 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
-import { set } from "react-hook-form";
 
 interface ThemeContextType {
   mode: string;
