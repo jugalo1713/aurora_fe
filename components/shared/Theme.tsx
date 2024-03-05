@@ -2,8 +2,11 @@
 
 import { Switch } from "@/components/ui/switch";
 import { useTheme } from "@/context/ThemeProvider";
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import MoonIcon from "./svgIcons/MoonIcon";
+import SunIcon from "./svgIcons/SunIcon";
 
 const Theme = () => {
   const { setMode, mode } = useTheme();
@@ -27,25 +30,13 @@ const Theme = () => {
   return (
     <>
       <div className="flex flex-row-reverse mt-4">
-        <Image
-          src="/assets/icons/moon.svg"
-          alt="moon"
-          width={15}
-          height={15}
-          className="mx-2"
-        />
+        <MoonIcon width={20} height={20} customClass="mx-2" />
         <Switch
           checked={themeValue}
           id="theme"
           onCheckedChange={handleThemeChange}
         />
-        <Image
-          src="/assets/icons/sun.svg"
-          alt="moon"
-          width={20}
-          height={20}
-          className="mx-2"
-        />
+        <SunIcon width={20} height={20} customClass="mx-2" />
       </div>
     </>
   );
