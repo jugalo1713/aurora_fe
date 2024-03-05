@@ -82,9 +82,3 @@
     @apply bg-background text-foreground;
   }
 }
-
-@layer components {
-  .border-size {
-    @apply w-[600px] h-[200px] mb-3 border-2 border-black;
-  }
-}
