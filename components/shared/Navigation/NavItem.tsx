@@ -8,6 +8,7 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 
 interface Props {
   menuTrigger: string;
@@ -22,6 +23,7 @@ interface subMenuItemProps {
 }
 
 const NavItem = ({ menuTrigger, subItems }: Props) => {
+  const currentLocale = useLocale();
   if (!menuTrigger) {
     return null;
   }
@@ -32,7 +34,7 @@ const NavItem = ({ menuTrigger, subItems }: Props) => {
         {subItems.map((subitem) => (
           <div key={subitem.itemTitle}>
             <MenubarItem>
-              <Link href={subitem.url}>
+              <Link href={`/${currentLocale + subitem.url}`}>
                 {subitem.itemTitle}
                 {subitem.Shortcut && (
                   <MenubarShortcut>{subitem.Shortcut}</MenubarShortcut>

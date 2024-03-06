@@ -9,11 +9,14 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { menuItems } from "@/constants";
 import Link from "next/link";
+import { useTranslations, useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
 
 const NavContent = () => {
+  const t = useTranslations("menuItems");
+  const currentLocale = useLocale();
   //const pathname = usePathname();
   return (
     <section className="flex h-full flex-col gap-6 pt-16">
@@ -23,9 +26,9 @@ const NavContent = () => {
         //   pathname === item.route;
 
         return (
-          <SheetClose asChild key={item.menuTrigger}>
+          <SheetClose asChild key={item.menuTriggerKey}>
             <Link
-              href={item.mainUrl}
+              href={`/${currentLocale + item.mainUrl}`}
               className={`${
                 false
                   ? "primary-gradient rounded-lg text-light-900"
@@ -33,7 +36,7 @@ const NavContent = () => {
               } flex items-center justify-start gap-4 bg-transparent p-4`}
             >
               <p className={false ? "base-bold" : "base-medium"}>
-                {item.menuTrigger}
+                {t(item.menuTriggerKey)}
               </p>
             </Link>
           </SheetClose>
