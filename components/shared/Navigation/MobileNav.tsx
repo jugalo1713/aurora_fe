@@ -1,7 +1,3 @@
-"use client";
-
-import React from "react";
-
 import {
   Sheet,
   SheetClose,
@@ -12,7 +8,6 @@ import Image from "next/image";
 import { menuItems } from "@/constants";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import { usePathname } from "next/navigation";
 
 const NavContent = () => {
   const t = useTranslations("menuItems");
