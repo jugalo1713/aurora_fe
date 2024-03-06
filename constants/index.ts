@@ -1,38 +1,53 @@
 export const menuItems = [
   {
-    menuTrigger: "Importaciones",
-    mainUrl: "/importaciones",
+    menuTriggerKey: "imports",
+    mainUrl: "/imports",
     subItems: [
-      { itemTitle: "Ver importaciones", url: "/importaciones" },
-      { itemTitle: "Crear", hasMenuSeparator: true, url: "/importaciones" },
-      { itemTitle: "Buscar", Shortcut: "⌘T", url: "/importaciones" },
-      { itemTitle: "Opciones", url: "/importaciones" },
+      { itemTitle: "Ver importaciones", url: "/imports" },
+      { itemTitle: "Crear", hasMenuSeparator: true, url: "/imports" },
+      { itemTitle: "Buscar", Shortcut: "⌘T", url: "/imports" },
+      { itemTitle: "Opciones", url: "/imports" },
     ],
   },
   {
-    menuTrigger: "Exportaciones",
-    mainUrl: "/exportaciones",
+    menuTriggerKey: "exports",
+    mainUrl: "/exports",
     subItems: [
-      { itemTitle: "Ver exportaciones", url: "/exportaciones" },
-      { itemTitle: "Crear", hasMenuSeparator: true, url: "/exportaciones" },
-      { itemTitle: "Opciones", url: "/exportaciones" },
+      { itemTitle: "Ver exportaciones", url: "/exports" },
+      { itemTitle: "Crear", hasMenuSeparator: true, url: "/exports" },
+      { itemTitle: "Opciones", url: "/exports" },
     ],
   },
   {
-    menuTrigger: "Terrestres",
-    mainUrl: "/terrestres",
+    menuTriggerKey: "inlands",
+    mainUrl: "/inlands",
     subItems: [
-      { itemTitle: "Ver terrestres", url: "/terrestres" },
-      { itemTitle: "Crear", hasMenuSeparator: true, url: "/terrestres" },
-      { itemTitle: "Opciones", url: "/terrestres" },
+      { itemTitle: "Ver terrestres", url: "/inlands" },
+      { itemTitle: "Crear", hasMenuSeparator: true, url: "/inlands" },
+      { itemTitle: "Opciones", url: "/inlands" },
     ],
   },
   {
-    menuTrigger: "Maestros",
-    mainUrl: "/maestros",
+    menuTriggerKey: "masters",
+    mainUrl: "/masters",
     subItems: [
-      { itemTitle: "Ver maestros", url: "/maestros" },
-      { itemTitle: "Crear", url: "/terceros/crear" },
+      { itemTitle: "Ver maestros", url: "/masters" },
+      { itemTitle: "Crear", url: "/masters" },
     ],
+  },
+];
+
+export const SupportedLanguages = [
+  {
+    locale: "en",
+    label: "english",
+    flag: "/assets/flags/usa.png",
+    localeKey: "english",
+  },
+  {
+    locale: "es",
+    label: "spanish",
+    flag: "/assets/flags/spain.png",
+    localeKey: "spanish",
   },
 ];
