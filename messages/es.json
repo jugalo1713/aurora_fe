@@ -1,0 +1,19 @@
+{
+  "Index": {
+    "imports": "importaciones",
+    "exports": "exportaciones",
+    "inland": "terrestre",
+    "masters": "maestros"
+  },
+  "Languages": {
+    "language": "Lenguaje",
+    "english": "Ingles",
+    "spanish": "Español"
+  },
+  "menuItems": {
+    "imports": "Importaciones",
+    "exports": "Exportaciones",
+    "inlands": "Terrestres",
+    "masters": "Maestros"
+  }
+}

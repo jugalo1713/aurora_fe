@@ -29,7 +29,7 @@ const Theme = () => {
 
   return (
     <>
-      <div className="flex flex-row-reverse mt-4">
+      <div className="flex flex-row-reverse">
         <MoonIcon width={20} height={20} customClass="mx-2" />
         <Switch
           checked={themeValue}

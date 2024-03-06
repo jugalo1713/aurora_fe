@@ -1,0 +1,19 @@
+{
+  "Index": {
+    "imports": "imports",
+    "exports": "exports",
+    "inland": "inland",
+    "masters": "masters"
+  },
+  "Languages": {
+    "language": "Language",
+    "english": "English",
+    "spanish": "Spanish"
+  },
+  "menuItems": {
+    "imports": "Imports",
+    "exports": "Exports",
+    "inlands": "Inlands",
+    "masters": "Masters"
+  }
+}

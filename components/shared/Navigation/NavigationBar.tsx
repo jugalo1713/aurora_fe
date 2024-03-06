@@ -5,8 +5,10 @@ import { Menubar } from "@/components/ui/menubar";
 import Link from "next/link";
 import MobileNav from "./MobileNav";
 import { menuItems } from "@/constants";
+import { useTranslations } from "next-intl";
 
 const NavigationBar = () => {
+  const t = useTranslations("menuItems");
   return (
     <>
       <div className="flex justify-between py-6">
@@ -36,8 +38,8 @@ const NavigationBar = () => {
             <Menubar className="hidden md:flex">
               {menuItems.map((item) => (
                 <NavItem
-                  key={item.menuTrigger}
-                  menuTrigger={item.menuTrigger}
+                  key={item.menuTriggerKey}
+                  menuTrigger={t(item.menuTriggerKey)}
                   subItems={item.subItems}
                 />
               ))}
